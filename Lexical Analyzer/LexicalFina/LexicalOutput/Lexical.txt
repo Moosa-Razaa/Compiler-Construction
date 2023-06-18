@@ -1,0 +1,8 @@
+( ~ , ~ , 0 )
+( identifier , a , 0 )
+( = , = , 0 )
+( int-const , 55 , 0 )
+( mdm , * , 0 )
+( int-const , 6 , 0 )
+( ; , ; , 0 )
+

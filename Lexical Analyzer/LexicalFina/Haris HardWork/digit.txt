@@ -1,0 +1,35 @@
+string z = "9aa";
+            string x = "a-202.2";
+            digit(x, 20);
+
+
+            Console.ReadKey();
+
+
+public static void digit(string word, int line)
+        {
+            token t = new token();
+            Regex intreg = new Regex("^[+-]?[0-9]+$");
+            Regex fltreg = new Regex("^[+-]?[0-9]*.[0-9]+$");
+            if (intreg.IsMatch(word))
+            {
+                t.ClassPart = "int-const";
+                t.ValuePart = word;
+                t.LineNo = line;
+                Console.WriteLine("{" + t.ClassPart + "," + t.ValuePart + "," + t.LineNo + "}");
+            }
+            else if (fltreg.IsMatch(word))
+            {
+                t.ClassPart = "float-const";
+                t.ValuePart = word;
+                t.LineNo = line;
+                Console.WriteLine("{" + t.ClassPart + "," + t.ValuePart + "," + t.LineNo + "}");
+            }
+            else
+            {
+                t.ClassPart = "error";
+                t.ValuePart = word;
+                t.LineNo = line;
+                Console.WriteLine("{" + t.ClassPart + "," + t.ValuePart + "," + t.LineNo + "}");
+            }
+        }
